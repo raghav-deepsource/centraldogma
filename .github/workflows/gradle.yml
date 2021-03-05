@@ -13,7 +13,7 @@ jobs:
   build:
     environment: DEEPSOURCE_DSN
     env:
-      - DEEPSOURCE_DSN: ${{ DEEPSOURCE_DSN }}
+      DEEPSOURCE_DSN: ${{ DEEPSOURCE_DSN }}
     runs-on: ubuntu-latest
 
     steps:
