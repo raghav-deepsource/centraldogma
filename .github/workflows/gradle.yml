@@ -12,8 +12,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      DEEPSOURCE_DSN: ${{DEEPSOURCE_DSN}}
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 13
@@ -32,6 +30,6 @@ jobs:
         # Path to the coverage data file. e.g. ./coverage.xml
         coverage-file: ./build/report/jacoco/jacocoTestReport.xml
         # DeepSource DSN of this repository. It is available under Settings → Reporting tab of the repository page on DeepSource.
-        dsn: DEEPSOURCE_DSN
+        dsn: ${{ secrets.DEEPSOURCE_DSN }}
         # Should the CI build fail if there is an error while uploading the report to DeepSource? Allowed values are — true, false
         fail-ci-on-error: true
